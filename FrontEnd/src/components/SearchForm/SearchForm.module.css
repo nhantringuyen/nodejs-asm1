@@ -1,0 +1,56 @@
+.searchForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between the input field and buttons */
+    max-width: 60%;
+    margin: 50px auto 20px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.input-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 40px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Make sure the icon doesn't block input interactions */
+    font-size: 16px;
+    color: #888;
+}
+
+.button-wrap {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.resetButton,
+.searchButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.resetButton {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.searchButton {
+    background-color: #007BFF;
+    color: white;
+}

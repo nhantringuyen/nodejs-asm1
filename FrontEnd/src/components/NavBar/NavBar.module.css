@@ -1,0 +1,31 @@
+/* NavBar.module.css */
+
+/* Navbar base styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: transparent; /* Màu nền ban đầu */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: background-color 0.3s ease;
+    z-index: 9999;
+}
+
+.navbarScrolled {
+    background-color: black; /* Màu nền khi cuộn qua 100px */
+}
+
+.logoText {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.search svg {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
