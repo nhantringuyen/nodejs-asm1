@@ -12,7 +12,7 @@
 // };
 // export default requests;
 
-const BASE_URL = "localhost:5000/api"; // Your backend base path
+const BASE_URL = "/api"; // Your backend base path
 const requests = {
   fetchNetflixOriginals: `${BASE_URL}/movies/discover?genre=10770`, // Netflix Originals
   fetchTrending: `${BASE_URL}/movies/trending`, // Trending
