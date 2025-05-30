@@ -28,7 +28,13 @@ const MovieDetail = ({ movieData }) => {
           setVideoKey(null);
         }
       } catch (error) {
-        console.error("Lỗi khi lấy dữ liệu video từ API nội bộ", error);
+         if (error.response) {
+          const backendMessage = error.response.data.message;
+          console.log(backendMessage);
+        } else {
+          // Lỗi khác (mạng, timeout,...)
+          console.error(error.message);
+        }
         setVideoKey(null);
       }
     };

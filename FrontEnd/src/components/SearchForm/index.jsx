@@ -5,8 +5,8 @@ import { FaSearch } from "react-icons/fa"; // Thêm icon tìm kiếm
 function SearchForm({ onSearch }) {
   const [query, setQuery] = useState("");
   const [genre, setGenre] = useState("");
-  const [mediaType, setMediaType] = useState("");
-  const [language, setLanguage] = useState("");
+  const [mediaType, setMediaType] = useState("all"); // mặc định all
+  const [language, setLanguage] = useState("");      // mặc định rỗng
   const [year, setYear] = useState("");
 
   const handleSearch = (e) => {
@@ -18,10 +18,10 @@ function SearchForm({ onSearch }) {
   const handleReset = () => {
     setQuery("");
     setGenre("");
-    setMediaType("");
+    setMediaType("all");
     setLanguage("");
     setYear("");
-    onSearch("", "", "", "", ""); // Reset các tham số
+    onSearch("", "", "all", "", ""); // Reset các tham số
   };
 
   return (
@@ -49,22 +49,28 @@ function SearchForm({ onSearch }) {
         />
       </div>
       <div className={classes["input-wrap"]}>
-        <input
-          type="text"
+        <select
           value={mediaType}
           onChange={(e) => setMediaType(e.target.value)}
-          placeholder="Enter media type (movie/show)..."
           className={classes.searchInput}
-        />
+        >
+          <option value="all">All</option>
+          <option value="movie">Movie</option>
+          <option value="tv">TV</option>
+          <option value="person">Person</option>
+        </select>
       </div>
       <div className={classes["input-wrap"]}>
-        <input
-          type="text"
+         <select
           value={language}
           onChange={(e) => setLanguage(e.target.value)}
-          placeholder="Enter language..."
           className={classes.searchInput}
-        />
+        >
+          <option value="">All Languages</option>
+          <option value="en">English</option>
+          <option value="ja">Japanese</option>
+          <option value="ko">Korean</option>
+        </select>
       </div>
       <div className={classes["input-wrap"]}>
         <input
